@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Popular font: Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Luminax AI - Gamified Study Community Design System
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Mostly black site with white text */
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+
+    --card: 0 0% 6%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 0 0% 6%;
+    --popover-foreground: 0 0% 100%;
+
+    /* Primary green */
+    --primary: 142 76% 36%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 142 76% 36%;
+
+    /* Support tones constrained to green/white */
+    --secondary: 142 65% 45%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 10%;
+    --muted-foreground: 0 0% 70%;
+
+    --accent: 142 65% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --success: 142 70% 35%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 142 65% 45%;
+    --warning-foreground: 0 0% 100%;
+
+    --destructive: 142 76% 36%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* UI elements */
+    --border: 0 0% 15%;
+    --input: 0 0% 6%;
+    --ring: 142 76% 36%;
+
+    /* XP and progress colors (kept within green range) */
+    --xp-bronze: 142 65% 45%;
+    --xp-silver: 142 20% 90%;
+    --xp-gold: 142 70% 40%;
+    --xp-diamond: 142 60% 50%;
+
+    /* Gradients disabled */
+    --gradient-primary: none;
+    --gradient-secondary: none;
+    --gradient-hero: none;
+    --gradient-card: none;
+
+    /* Glow effects disabled */
+    --glow-primary: none;
+    --glow-secondary: none;
+    --glow-success: none;
+
+    --radius: 0.75rem;
+
+    /* Sidebar follows black */
+    --sidebar-background: 0 0% 0%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 142 76% 36%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 98%;
+    --sidebar-accent-foreground: 222 47% 11%;
+    --sidebar-border: 0 0% 90%;
+    --sidebar-ring: 142 76% 36%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  }
+}
+
+/* Gaming Utility Classes */
+@layer components {
+  .glow-primary {
+    box-shadow: none;
+  }
+  
+  .glow-secondary {
+    box-shadow: none;
+  }
+  
+  .glow-success {
+    box-shadow: none;
+  }
+  
+  .gradient-primary {
+    background: none;
+  }
+  
+  .gradient-secondary {
+    background: none;
+  }
+  
+  .gradient-hero {
+    background: none;
+  }
+  
+  .gradient-card {
+    background: none;
+  }
+  
+  .xp-glow {
+    animation: xp-pulse 2s ease-in-out infinite;
+  }
+}
+
+@layer utilities {
+  @keyframes xp-pulse {
+    0%, 100% {
+      box-shadow: 0 0 5px hsl(var(--primary) / 0.5);
+    }
+    50% {
+      box-shadow: 0 0 20px hsl(var(--primary) / 0.8);
+    }
+  }
+  
+  @keyframes streak-flame {
+    0%, 100% {
+      transform: scale(1) rotate(0deg);
+    }
+    50% {
+      transform: scale(1.1) rotate(2deg);
+    }
+  }
+  
+  .streak-animation {
+    animation: streak-flame 1.5s ease-in-out infinite;
+  }
+}
